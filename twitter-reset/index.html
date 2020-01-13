@@ -1,31 +1,6 @@
 <!DOCTYPE html>
 <html ⚡ lang="en">
   <head>
-  <!-- <amp-analytics type="googleanalytics" id="amp-analytics">
-<script type="application/json">
-{
-  "vars": {
-    "account": "UA-114674539-1"
-  },
-  "triggers": {
-    "trackPageview": {
-      "on": "visible",
-      "request": "pageview"
-    }
-  }
-}
-</script>
-</amp-analytics> -->
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114674539-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', UA-114674539-1);
-</script>
 
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Lora:400,700' rel='stylesheet' type='text/css'>
   <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
@@ -562,4 +537,19 @@ pre > code { border: 0; padding-right: 0; padding-left: 0; }
 
     
   </body>
+	<!-- Fathom - simple website analytics - https://usefathom.com -->
+	<script>
+		(function(f, a, t, h, o, m){
+			a[h]=a[h]||function(){
+			(a[h].q=a[h].q||[]).push(arguments)
+		};
+			o=f.createElement('script'),
+			m=f.getElementsByTagName('script')[0];
+			o.async=1; o.src=t; o.id='fathom-script';
+			m.parentNode.insertBefore(o,m)
+		})(document, window, 'https://cdn.usefathom.com/tracker.js', 'fathom');
+		fathom('set', 'siteId', 'LUXGEPES');
+		fathom('trackPageview');
+	</script>
+	<!-- / Fathom -->
 </html>
