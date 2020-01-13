@@ -1,30 +1,346 @@
----
-layout: null
----
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>{{ site.title | xml_escape }}</title>
-    <description>{{ site.description | xml_escape }}</description>
-    <link>{{ site.url }}{{ site.baseurl }}/</link>
-    <atom:link href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" rel="self" type="application/rss+xml"/>
-    <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
-    <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
-    <generator>Jekyll v{{ jekyll.version }}</generator>
-    {% for post in site.posts limit:10 %}
+    <title>Sean Nam</title>
+    <description>UC San Diego B.S. Computer Science</description>
+    <link>http://seannam.github.io/</link>
+    <atom:link href="http://seannam.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 13 Jan 2020 03:38:42 +0000</pubDate>
+    <lastBuildDate>Mon, 13 Jan 2020 03:38:42 +0000</lastBuildDate>
+    <generator>Jekyll v4.0.0</generator>
+    
       <item>
-        <title>{{ post.title | xml_escape }}</title>
-        <description>{{ post.content | xml_escape }}</description>
-        <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
-        <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
-        <guid isPermaLink="true">{{ post.url | prepend: site.baseurl | prepend: site.url }}</guid>
-        {% for tag in post.tags %}
-        <category>{{ tag | xml_escape }}</category>
-        {% endfor %}
-        {% for cat in post.categories %}
-        <category>{{ cat | xml_escape }}</category>
-        {% endfor %}
+        <title>Setting Up a New Mac</title>
+        <description>&lt;p&gt;My Macbook Air was acting up and I decided I had enough and proceeded to do a fresh install. This will be a step-by-step walkthrough on how I set up a new Mac. I plan to write up a nicer version to store on Github. Don’t forget most of these will be a matter of &lt;strong&gt;personal preference&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Install updates. Best to do this first as there may be critical security patches waiting to be installed. And the fact that the notification number on the AppStore icon will bother me for eternity.&lt;/li&gt;
+  &lt;li&gt;Hide the dock. Because I need the screen real estate!&lt;/li&gt;
+  &lt;li&gt;Change scroll direction. &lt;code class=&quot;highlighter-rouge&quot;&gt;System Preferences -&amp;gt; Trackpad -&amp;gt; uncheck Scroll direction: Natural&lt;/code&gt;. Because it’s &lt;em&gt;not&lt;/em&gt; natural at all, especially if you’ve been using Macs (or even PCs) for a decade.&lt;/li&gt;
+  &lt;li&gt;Organize the dock. Let’s get rid of the following apps that I don’t use:
+    &lt;ul&gt;
+      &lt;li&gt;Siri&lt;/li&gt;
+      &lt;li&gt;Contacts&lt;/li&gt;
+      &lt;li&gt;iTunes (it’ll open on it’s own if I really need it!)&lt;/li&gt;
+      &lt;li&gt;Maps (does anyone actually use this?)&lt;/li&gt;
+      &lt;li&gt;iBooks&lt;br /&gt;
+I’ll come back to this later once I have all my apps installed.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Right click on the Dock and click on &lt;code class=&quot;highlighter-rouge&quot;&gt;Dock Preferences&lt;/code&gt;. I turn the size down just a bit and turn on magnification to be slightly larger. It helps distinguish which app my mouse cursor is over.&lt;/li&gt;
+  &lt;li&gt;Install Xcode from the Mac AppStore and then download the Xcode Command Line Tools. I develop web and iOS applications so this is essential. I like to let it download in the background while I set up  everything else.&lt;/li&gt;
+  &lt;li&gt;Turn off notifications by scheduling 24/7 Do Not Disturb mode. I don’t need more distractions. &lt;code class=&quot;highlighter-rouge&quot;&gt;System Preferences -&amp;gt; Do Not Disturb&lt;/code&gt;, I set mine from 3:00AM to 2:59AM.&lt;/li&gt;
+  &lt;li&gt;Also turn off notifications in apps that I don’t use or want notifications from - Photos, Safri, Games. Set Calendar to only show notifications on the lock screen and turn off Badge app icon for FaceTime.&lt;/li&gt;
+  &lt;li&gt;I don’t use the sidebar so I’m going to remove the default apps.&lt;/li&gt;
+  &lt;li&gt;I use &lt;code class=&quot;highlighter-rouge&quot;&gt;cmd+shift+f&lt;/code&gt; for searching Spotlight, so I will set that now.&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;System Preferences -&amp;gt; Keyboard -&amp;gt; Shortcuts -&amp;gt; Spotlight&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;I just found out System Preferences are supposed to sync via iCloud so let’s get that set up.&lt;br /&gt;
+I hate the simplified &lt;em&gt;Finder&lt;/em&gt;. Let’s start fixing that.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Finder -&amp;gt; View -&amp;gt; Show Path Bar&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;Finder -&amp;gt; View -&amp;gt; Show Status Bar&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Next, get rid of the useless &lt;em&gt;All My Files&lt;/em&gt;.&lt;/li&gt;
+  &lt;li&gt;Now let’s find the hard drive. Luckily I have another Mac on my network so I can open &lt;code class=&quot;highlighter-rouge&quot;&gt;Show in Enclosing Folder&lt;/code&gt; to get to the folder. Otherwise, I’d probably have to use Finder’s “Go To” menu option.&lt;br /&gt;
+My sidebar now looks like this:
+    &lt;ul&gt;
+      &lt;li&gt;Macintosh HD&lt;/li&gt;
+      &lt;li&gt;AirDrop&lt;/li&gt;
+      &lt;li&gt;Desktop&lt;/li&gt;
+      &lt;li&gt;Applications&lt;/li&gt;
+      &lt;li&gt;Documents&lt;/li&gt;
+      &lt;li&gt;Downloads&lt;/li&gt;
+      &lt;li&gt;iCloud Drive&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Next add the &lt;code class=&quot;highlighter-rouge&quot;&gt;Library&lt;/code&gt; folder from &lt;code class=&quot;highlighter-rouge&quot;&gt;Macintosh HD&lt;/code&gt; to the sidebar, under Applications.&lt;/li&gt;
+  &lt;li&gt;Open up &lt;code class=&quot;highlighter-rouge&quot;&gt;Macintosh HD -&amp;gt; Users&lt;/code&gt; and add my user’s home directory to the sidebar, between &lt;em&gt;Desktop&lt;/em&gt; and &lt;em&gt;Applications&lt;/em&gt;. Quick note. I don’t think iCloud properly synced my System Preferences, at least not yet. I’ll have to set up the keyboard shortcuts and what not later.&lt;/li&gt;
+  &lt;li&gt;Meanwhile, let’s download Google Chrome.&lt;/li&gt;
+  &lt;li&gt;Actually let’s set up Hot Corners first. 
+&lt;em&gt;Note&lt;/em&gt;: 227.8GB free right now. Xcode 9.2 is roughly 5.1GB and I had to download from the Apple Developer’s website since the newest version on the MacAppStore (9.3.1) isn’t supported on Sierra. Still too scared to update to High Sierra though.&lt;/li&gt;
+  &lt;li&gt;I normally use HyperDock for windows management but since I already bought it, I’m going to try and use &lt;em&gt;Magnet&lt;/em&gt; exclusively. I don’t like how it’s a menu bar item though. One feature it seems to be missing is scrolling at the top to toggle between the current and last window sizes, and filling the screen (essentially becoming fullscreen without using that dreaded green icon in the corner).&lt;/li&gt;
+  &lt;li&gt;I’m emptying the trash a lot since I’m trying to keep things nice and organized clicking yes to that warning is getting annoying. Let’s disable it in the Finder’s advanced settings.&lt;/li&gt;
+  &lt;li&gt;Let’s start downloading all the apps I use. I will download the essentials first and reconsider others later.
+    &lt;ul&gt;
+      &lt;li&gt;Backblaze - for cloud backup&lt;/li&gt;
+      &lt;li&gt;Bartender - because I like a nice and clean menu bar&lt;/li&gt;
+      &lt;li&gt;DaisyDisk - because it’s 2018 and I still only have 256 GB, granted it’s a SSD but still&lt;/li&gt;
+      &lt;li&gt;Dropbox - see ^&lt;/li&gt;
+      &lt;li&gt;Focus - because it’s hard to focus sometimes with so many distractions&lt;/li&gt;
+      &lt;li&gt;itsy calendar - replacing the default date &amp;amp; time in the menu bar with something more useful&lt;/li&gt;
+      &lt;li&gt;Jumpcut - last update was almost a decade ago (2009) but it still works&lt;/li&gt;
+      &lt;li&gt;licecap - for recording gifs, great for demoing projects&lt;/li&gt;
+      &lt;li&gt;Pixelmator - basic image editing&lt;/li&gt;
+      &lt;li&gt;RescueTime - because the Internet is an endless pit and I want to be aware of where my time is going&lt;/li&gt;
+      &lt;li&gt;Sketch - vector-based program similar to Adobe Illustrator, great wireframing&lt;/li&gt;
+      &lt;li&gt;Slack - because everyone is obsessed with it&lt;/li&gt;
+      &lt;li&gt;Soulver - it’s a calculator + notepad and it’s awesome!&lt;/li&gt;
+      &lt;li&gt;Sublime Text - my preferred text editor&lt;/li&gt;
+      &lt;li&gt;Synergy - 2 macs, 1 mouse + keyboard.&lt;/li&gt;
+      &lt;li&gt;VLC - for all my media playback. so versatile!&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Set up Dropbox and Backblaze. I am paying for Dropbox Professional exclusively for the Smart Sync feature (I was previous paying for 1TB of storage). Dropbox will take a few days and a lot of CPU but at least now I can go on to the next step.&lt;/li&gt;
+  &lt;li&gt;Set up Hot Corners:
+    &lt;ul&gt;
+      &lt;li&gt;Top left: Application Windows&lt;/li&gt;
+      &lt;li&gt;Top right: Desktop&lt;/li&gt;
+      &lt;li&gt;Bottom left: Dashboard&lt;/li&gt;
+      &lt;li&gt;Bottom right: Mission Control&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Set up keyboard shortcuts
+    &lt;ul&gt;
+      &lt;li&gt;Google Chrome - Task Manger: &lt;code class=&quot;highlighter-rouge&quot;&gt;⌘ + esc&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;Preview - Adjust Size…: &lt;code class=&quot;highlighter-rouge&quot;&gt;⌥⌘I&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;Notepad - Font…: &lt;code class=&quot;highlighter-rouge&quot;&gt;⌘T&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Install two more apps
+    &lt;ul&gt;
+      &lt;li&gt;OneNote - since Evernote got greedy and started charging PER device, not to mention it’s a resource hog.&lt;/li&gt;
+      &lt;li&gt;Evernote - despite the above, I still have at least 5 years worth of notes in here.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Set up Chrome. Because I use Gmail and all the other Google services it now comes with, I just have to sign in and wait for everything to sync. Yes, that means the mess that is my Chrome set up (bookmarks &amp;amp; extensions) is coming to my fresh Mac install. Sad but true (and also necessary).&lt;/li&gt;
+  &lt;li&gt;Set up Terminal. I use the default app because it &lt;em&gt;works&lt;/em&gt;. I just like to change the background color to something more Matrix/Hollywood like - aka the &lt;em&gt;homebrew&lt;/em&gt; theme.
+    &lt;h3 id=&quot;now-for-the-fun-part---setting-up-the-dev-environment&quot;&gt;Now for the fun part - setting up the dev environment!&lt;/h3&gt;
+    &lt;p&gt;But first, I’m going to make a DMG backup of this setup so I don’t have to do it again in the near future. Of course, in a couple years it’ll all be irrelevant as macOS will probably have changed significantly by then, along with my workflow and the apps I use. But worst case scenario, it’s a good starting point.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Create a custom Sublime Text command to use in Terminal
+&lt;code class=&quot;highlighter-rouge&quot;&gt;ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/&lt;/code&gt;&lt;br /&gt;
+Official instructions &lt;a href=&quot;http://www.sublimetext.com/docs/3/osx_command_line.html&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Customize Sublime Text. I have my settings back up to Github using git version control, so it’s simple as setting up the repo locally.&lt;/li&gt;
+  &lt;li&gt;Install &lt;em&gt;Homebrew&lt;/em&gt; - a package installer for macOS. Must have for developers. &lt;em&gt;Macports&lt;/em&gt; is a pouplar alternative.&lt;/li&gt;
+  &lt;li&gt;Set up Python*:
+    &lt;ul&gt;
+      &lt;li&gt;Add &lt;code class=&quot;highlighter-rouge&quot;&gt;export PATH=/usr/local/bin:/usr/local/sbin:$PATH&lt;/code&gt; to your bash profile.&lt;/li&gt;
+      &lt;li&gt;Then install Python 3 using Homebrew, &lt;code class=&quot;highlighter-rouge&quot;&gt;brew install python&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;http://docs.python-guide.org/en/latest/starting/install3/osx/&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Update Ruby. Until I need multiple Ruby versions, I will just use Homebrew to install the latest one. Then, following the instructions here, I can update my bash profile to point to the new directory: https://stackoverflow.com/questions/38194032/how-to-update-ruby-version-2-0-0-to-the-latest-version-in-mac-osx-yosemite&lt;/li&gt;
+  &lt;li&gt;Install node.js using Homebrew or the provided installer on the website. Note that Homebrew installed the &lt;em&gt;Latest Version&lt;/em&gt; by default while the installer provides both &lt;em&gt;LTS&lt;/em&gt; and &lt;em&gt;Latest Version&lt;/em&gt; options.&lt;/li&gt;
+  &lt;li&gt;Install the JDK from the website. As of this writing, it’s version 1.8.x for Java 8.&lt;/li&gt;
+  &lt;li&gt;I think that’s it! At the end I ran the following to double check the version numbers:
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;python --version
+ruby --version
+java -version
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;I got the following values:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Python 3.6.3
+ruby 2.5.1p57 (2018-03-29 revision 63029) [x86_64-darwin16]
+java version &quot;1.8.0_151&quot;
+Java(TM) SE Runtime Environment (build 1.8.0_151-b12)
+Java HotSpot(TM) 64-Bit Server VM (build 25.151-b12, mixed mode)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;mission-accomplished&quot;&gt;Mission accomplished!&lt;/h3&gt;
+
+&lt;p&gt;I went back and set up a few more things like keyboard input, &lt;a href=&quot;https://www.macbartender.com/&quot;&gt;Bartender&lt;/a&gt;, installing and setting up a few other apps, and other small things that came up. Now just waiting for Dropbox and OneDrive to sync!&lt;/p&gt;
+
+&lt;p&gt;*Originally I followed the steps below but since I used &lt;code class=&quot;highlighter-rouge&quot;&gt;virtualenv&lt;/code&gt; before, I will stick to it for now. Note there is a pyenv wrapper for &lt;code class=&quot;highlighter-rouge&quot;&gt;virtualenv&lt;/code&gt; but I found it unnecessary as I don’t actually use &lt;code class=&quot;highlighter-rouge&quot;&gt;pyenv&lt;/code&gt;.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;install &lt;code class=&quot;highlighter-rouge&quot;&gt;pyenv&lt;/code&gt; using Homebrew: &lt;code class=&quot;highlighter-rouge&quot;&gt;brew install pyenv&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;use &lt;code class=&quot;highlighter-rouge&quot;&gt;pyenv install --list&lt;/code&gt; to see which versions are available for install&lt;/li&gt;
+  &lt;li&gt;install the latest version of Python 3&lt;/li&gt;
+  &lt;li&gt;set Python 3 to be the default global version (&lt;a href=&quot;http://sourabhbajaj.com/mac-setup/Python/README.html&quot;&gt;helpful blogpost&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;install pyenv-virtualenv using Homebrew: &lt;code class=&quot;highlighter-rouge&quot;&gt;brew install pyenv-virtualenv &lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://medium.com/@jordanthomasg/python-development-on-macos-with-pyenv-2509c694a808&quot;&gt;Helpful blog post part 1&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://medium.com/@jordanthomasg/python-development-on-macos-with-pyenv-virtualenv-ec583b92934c&quot;&gt;Helpful blog post part 2&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sat, 12 May 2018 20:45:00 +0000</pubDate>
+        <link>http://seannam.github.io/Setting-Up-a-New-Mac/</link>
+        <guid isPermaLink="true">http://seannam.github.io/Setting-Up-a-New-Mac/</guid>
+        
+        
       </item>
-    {% endfor %}
+    
+      <item>
+        <title>Creating Command Line Aliases</title>
+        <description>&lt;p&gt;I learned about this last fall. I was working on a web application with a team for a software engineering class and was tired of opening up terminal and changing to the same directories so often.&lt;/p&gt;
+
+&lt;p&gt;This is when I discovered &lt;em&gt;command line aliases&lt;/em&gt;, more specifically, &lt;em&gt;bash shell aliases&lt;/em&gt;. These are one word shortcuts to regular terminal commands.&lt;/p&gt;
+
+&lt;p&gt;To create new a new alias, open your &lt;code class=&quot;highlighter-rouge&quot;&gt;./bash_profile&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;./bashrc&lt;/code&gt; file and use the following syntax:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;alias name=value 
+alias name='command' 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;examples:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-#!/bin/bash&quot;&gt;	alias gith='cd ~/GitWorkspace/'
+	alias jflap='java -jar ~/Documents/JFLAP.jar'
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then use &lt;code class=&quot;highlighter-rouge&quot;&gt;source ~/.bash_profile&lt;/code&gt; to execute the changes.&lt;/p&gt;
+
+&lt;p&gt;This &lt;a href=&quot;https://www.cyberciti.biz/tips/bash-aliases-mac-centos-linux-unix.html&quot;&gt;page&lt;/a&gt; has more syntax examples, like how to add a command with arguments, as well as 30 handy aliases.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 11 May 2018 05:24:00 +0000</pubDate>
+        <link>http://seannam.github.io/create-terminal-aliases/</link>
+        <guid isPermaLink="true">http://seannam.github.io/create-terminal-aliases/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Twitter Reset</title>
+        <description>&lt;p&gt;I’ll be the first to admit it, I’m not a big fan of social media. Compared to my peers, you could even say I’m not addicted to Facebook, Reddit, Instagram, or Twitter. But today I decided to unfollow everyone and only follow a select few. I was inspired by Jason Zook’s Twitter experiment, which you can read about &lt;a href=&quot;https://jasondoesstuff.com/unfollowing-twitter-experiment/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I started off following almost a 1000 people and after a couple hours of cleaning, I am down to just 56 people.&lt;/p&gt;
+
+&lt;p&gt;A few things I noticed:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;I was following at least 13 VC’s or VC firms&lt;/li&gt;
+  &lt;li&gt;At least 46 people claimed “founder” or “co-founder” status and 12 claimed “CEO” status&lt;/li&gt;
+  &lt;li&gt;At least 12 claimed they were “entrepreneurs”&lt;/li&gt;
+  &lt;li&gt;Most were developers, product/service brand accounts, or involved in the start up “industry”&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Notes on my observations.&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Not surprising as I’ve been following startups and VC’s for years.&lt;/li&gt;
+  &lt;li&gt;I say &lt;em&gt;at least&lt;/em&gt; because after a while I stopped saving people into what ended up being 39 lists. Also, these lists are more like tags in that people could be in multiple lists so there is some discrepancy.&lt;/li&gt;
+  &lt;li&gt;I have so much to say about this mostly because I dislike and disagree with how the media portrays startups and entrepreneurship. But regardless, it’s not surprising that entrepreneurs would be on Twitter and that I would follow them.&lt;/li&gt;
+  &lt;li&gt;Not surprising at all. As a C.S. major, I do a lot of programming not to mention that &lt;em&gt;software engineer&lt;/em&gt; is one of the most common career paths for this major.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;My goal was to:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Follow people that actually talk and interact with others, not just promote their own work or sell their products/services,&lt;/li&gt;
+  &lt;li&gt;Ignore “high profile” accounts, CEOs of major companies. I can find them anytime if I am looking for them specificially.&lt;/li&gt;
+  &lt;li&gt;Follow people not brands/company accounts.&lt;/li&gt;
+  &lt;li&gt;Follow people active in the past month, and&lt;/li&gt;
+  &lt;li&gt;Follow makers, because I like trying new things.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;All in all, I think I did a decent job. It’s not 20, the number of people &lt;a href=&quot;https://twitter.com/jasondoesstuff&quot;&gt;@jasondoesstuff&lt;/a&gt; or other people have but it feels much better than the nearly thousand people I was following before. I still follow a few inactive accounts and a couple brands/companies, but I am satisfied with my new list.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 14 Mar 2018 06:44:00 +0000</pubDate>
+        <link>http://seannam.github.io/twitter-reset/</link>
+        <guid isPermaLink="true">http://seannam.github.io/twitter-reset/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>How to Run Services</title>
+        <description>&lt;p&gt;I use a lot of different technologies including django, node, and Jekyll. Here’s a list of how to start these services on a Mac.&lt;/p&gt;
+
+&lt;p&gt;django&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;python manage.py runserver
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;python&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;python
+# wait for the &amp;gt;&amp;gt;&amp;gt; 
+Python 2.7.13 |Anaconda custom (64-bit)| (default, Sep 21 2017, 17:38:20) 
+[GCC 4.2.1 Compatible Clang 4.0.1 (tags/RELEASE_401/final)] on darwin
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&amp;gt;&amp;gt;&amp;gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;python environment manager&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;conda
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;source activate project # where 'project' is the virtualenv name
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;virtualvenv
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;source activate project/bin/activate # where 'project' is the virtualenv name
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;node&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;node index.js \\ index.js is the main file
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;jekyll&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle exec jekyll serve
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;rails&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;rails server
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+        <pubDate>Sat, 10 Mar 2018 09:32:00 +0000</pubDate>
+        <link>http://seannam.github.io/run-services/</link>
+        <guid isPermaLink="true">http://seannam.github.io/run-services/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Jekyll Travis CI Setup</title>
+        <description>&lt;p&gt;Jekyll is a static site generator so only HTML, CSS, and JavaScript are loaded. Why bother with continuous integration, like Travis, at all? For the experience.&lt;/p&gt;
+
+&lt;p&gt;What sounds like a simple task took longer than expected. Here is what I did.&lt;/p&gt;
+
+&lt;p&gt;1) Connected Github account to Travis CI (already done since I’ve used Travis before).&lt;br /&gt;
+2) Created a &lt;code class=&quot;highlighter-rouge&quot;&gt;.travis.yml&lt;/code&gt;, which is what Travis uses for configuration. It’s fairly straightforward.&lt;/p&gt;
+
+&lt;noscript&gt;
+  &lt;pre&gt;400: Invalid request
+&lt;/pre&gt;
+&lt;/noscript&gt;
+&lt;script src=&quot;https://gist.github.com/a2e0a2b4b9063139de3e3b43dd01dcaa.js?file=.travis.yml&quot;&gt; &lt;/script&gt;
+
+&lt;p&gt;3) Added new variables to my &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;username: seannam
+repo: seannam.github.io
+branch: master
+destination: _site/
+safe: false
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Full file:&lt;/p&gt;
+&lt;noscript&gt;
+  &lt;pre&gt;400: Invalid request
+&lt;/pre&gt;
+&lt;/noscript&gt;
+&lt;script src=&quot;https://gist.github.com/2faa268b21fb7593980daa7881959a60.js?file=_config.yml&quot;&gt; &lt;/script&gt;
+
+&lt;p&gt;4) Created a script file that will run &lt;code class=&quot;highlighter-rouge&quot;&gt;htmlproofer&lt;/code&gt;, a Ruby Gem I’m using to test my site. It checks links and images.&lt;/p&gt;
+&lt;noscript&gt;
+  &lt;pre&gt;400: Invalid request
+&lt;/pre&gt;
+&lt;/noscript&gt;
+&lt;script src=&quot;https://gist.github.com/2a7536032393af4960da59df44513be9.js?file=cibuild&quot;&gt; &lt;/script&gt;
+
+&lt;p&gt;5) Added &lt;code class=&quot;highlighter-rouge&quot;&gt;gem 'html-proofer'&lt;/code&gt; to my &lt;code class=&quot;highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt;.&lt;/p&gt;
+&lt;noscript&gt;
+  &lt;pre&gt;400: Invalid request
+&lt;/pre&gt;
+&lt;/noscript&gt;
+&lt;script src=&quot;https://gist.github.com/2cda06384d19e3c6c341874f1970fd52.js?file=Gemfile&quot;&gt; &lt;/script&gt;
+
+&lt;p&gt;6) Commit and push. Travis runs automatically.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 26 Feb 2018 02:04:00 +0000</pubDate>
+        <link>http://seannam.github.io/jekyll-travis-ci-setup/</link>
+        <guid isPermaLink="true">http://seannam.github.io/jekyll-travis-ci-setup/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>New Blog!</title>
+        <description>&lt;p&gt;I had Jekyll installed and setup back in December 2017 but I didn’t use it. Came back today and had to disable &lt;code class=&quot;highlighter-rouge&quot;&gt;rbenv&lt;/code&gt; and reinstall a bunch of gems to get it to work.&lt;/p&gt;
+
+&lt;p&gt;Basically, setting up Jekyll was a pain and I wonder if it was worth it.&lt;/p&gt;
+
+&lt;p&gt;You don’t realize how convenient and easy Wordpress really is until you try to move away from it.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 25 Feb 2018 11:03:00 +0000</pubDate>
+        <link>http://seannam.github.io/new-blog/</link>
+        <guid isPermaLink="true">http://seannam.github.io/new-blog/</guid>
+        
+        
+      </item>
+    
   </channel>
 </rss>

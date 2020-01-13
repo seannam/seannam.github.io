@@ -1,59 +1,113 @@
----
-layout: home
----
-
 <header class="blog-header">
   <div id="wrap">
     <div id="left_col">
       
-        <h1 class="blog-title">{{ site.title }}</h1>
-        <h2 class="blog-description">{{ site.description }}</h2>
+        <h1 class="blog-title">Sean Nam</h1>
+        <h2 class="blog-description">UC San Diego B.S. Computer Science</h2>
       
     </div>
     <div id="right_col">
-        <h1 class="blog-title">{{ site.title }}</h1>
-        <h2 class="blog-description">{{ site.description }}</h2>
+        <h1 class="blog-title">Sean Nam</h1>
+        <h2 class="blog-description">UC San Diego B.S. Computer Science</h2>
     </div>
   </div>
 </header>
 
 <main class="content" role="main">
   <div class="cf frame">
-    {% for post in paginator.posts %}
+    
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting" role="article">
         <div class="article-item">
           <header class="post-header">
-            <h2 class="post-title" itemprop="name"><a href="{{ site.baseurl }}{{ post.url }}" itemprop="url">{{ post.title }}</a></h2>
+            <h2 class="post-title" itemprop="name"><a href="/Setting-Up-a-New-Mac/" itemprop="url">Setting Up a New Mac</a></h2>
           </header>
           <section class="post-excerpt" itemprop="description">
-            <p>{{ post.excerpt | strip_html | truncatewords: 50 }}</p>
+            <p>My Macbook Air was acting up and I decided I had enough and proceeded to do a fresh install. This will be a step-by-step walkthrough on how I set up a new Mac. I plan to write up a nicer version to store on Github. Don’t forget most of these...</p>
           </section>
           <div class="post-meta">
-            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_long_string }}</time>
+            <time datetime="2018-05-12T20:45:00+00:00">12 May 2018</time>
           </div>
         </div>
       </article>
-    {% endfor %}
+    
+      <article class="post" itemscope itemtype="http://schema.org/BlogPosting" role="article">
+        <div class="article-item">
+          <header class="post-header">
+            <h2 class="post-title" itemprop="name"><a href="/create-terminal-aliases/" itemprop="url">Creating Command Line Aliases</a></h2>
+          </header>
+          <section class="post-excerpt" itemprop="description">
+            <p>I learned about this last fall. I was working on a web application with a team for a software engineering class and was tired of opening up terminal and changing to the same directories so often.
+</p>
+          </section>
+          <div class="post-meta">
+            <time datetime="2018-05-11T05:24:00+00:00">11 May 2018</time>
+          </div>
+        </div>
+      </article>
+    
+      <article class="post" itemscope itemtype="http://schema.org/BlogPosting" role="article">
+        <div class="article-item">
+          <header class="post-header">
+            <h2 class="post-title" itemprop="name"><a href="/twitter-reset/" itemprop="url">Twitter Reset</a></h2>
+          </header>
+          <section class="post-excerpt" itemprop="description">
+            <p>I’ll be the first to admit it, I’m not a big fan of social media. Compared to my peers, you could even say I’m not addicted to Facebook, Reddit, Instagram, or Twitter. But today I decided to unfollow everyone and only follow a select few. I was inspired by Jason...</p>
+          </section>
+          <div class="post-meta">
+            <time datetime="2018-03-14T06:44:00+00:00">14 March 2018</time>
+          </div>
+        </div>
+      </article>
+    
+      <article class="post" itemscope itemtype="http://schema.org/BlogPosting" role="article">
+        <div class="article-item">
+          <header class="post-header">
+            <h2 class="post-title" itemprop="name"><a href="/run-services/" itemprop="url">How to Run Services</a></h2>
+          </header>
+          <section class="post-excerpt" itemprop="description">
+            <p>I use a lot of different technologies including django, node, and Jekyll. Here’s a list of how to start these services on a Mac.
+</p>
+          </section>
+          <div class="post-meta">
+            <time datetime="2018-03-10T09:32:00+00:00">10 March 2018</time>
+          </div>
+        </div>
+      </article>
+    
+      <article class="post" itemscope itemtype="http://schema.org/BlogPosting" role="article">
+        <div class="article-item">
+          <header class="post-header">
+            <h2 class="post-title" itemprop="name"><a href="/jekyll-travis-ci-setup/" itemprop="url">Jekyll Travis CI Setup</a></h2>
+          </header>
+          <section class="post-excerpt" itemprop="description">
+            <p>Jekyll is a static site generator so only HTML, CSS, and JavaScript are loaded. Why bother with continuous integration, like Travis, at all? For the experience.
+</p>
+          </section>
+          <div class="post-meta">
+            <time datetime="2018-02-26T02:04:00+00:00">26 February 2018</time>
+          </div>
+        </div>
+      </article>
+    
   </div>
 
   <nav class="pagination" role="navigation">
-    {% if paginator.next_page %}
-      <a class="newer-posts" href="{{ site.baseurl }}/page{{paginator.next_page}}">&larr; Older posts</a>
-    {% else %}
-      <a class="newer-posts disabled">&larr; Older posts</a>
-    {% endif %}
-    <span class="page-number">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
-    {% if paginator.previous_page %}
-      {% if paginator.page == 2 %}
-        <a class="older-posts" href="{{ site.baseurl }}/">Newer posts &rarr;</a>
-      {% else %}
-        <a class="older-posts" href="{{ site.baseurl }}/page{{paginator.previous_page}}">Newer posts &rarr;</a>
-      {% endif %}
-    {% else %}
+    
+      <a class="newer-posts" href="/page2">&larr; Older posts</a>
+    
+    <span class="page-number">Page 1 of 2</span>
+    
       <a class="older-posts disabled">Newer posts &rarr;</a>
-    {% endif %}
+    
   </nav>
 
 </main>
 
-{% include footer.html %}
+<footer class="site-footer">
+<hr>
+    <div class="inner">
+         <section class="copyright">All content copyright Sean Nam</a> &copy; 2020 &bull; All rights reserved.</section>
+    </div>
+</footer>
+<script type='text/javascript'>var _merchantSettings=_merchantSettings || [];_merchantSettings.push(['AT', '11lrxb']);(function(){var autolink=document.createElement('script');autolink.type='text/javascript';autolink.async=true; autolink.src= ('https:' == document.location.protocol) ? 'https://autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js' : 'http://autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(autolink, s);})();</script>
+
