@@ -3,8 +3,13 @@
   <head>
 
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Lora:400,700' rel='stylesheet' type='text/css'>
-  <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
   
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+  <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,8 +28,8 @@
   "@type": "NewsArticle",
   "mainEntityOfPage": "http://seannam.github.io/about/",
   "headline": "About",
-  "datePublished": "2020-01-13T05:06:38+00:00",
-  "dateModified": "2020-01-13T05:06:38+00:00",
+  "datePublished": "2020-01-15T12:36:27+00:00",
+  "dateModified": "2020-01-15T12:36:27+00:00",
   "description": "UC San Diego B.S. Computer Science",
   "author": {
     "@type": "Person",
@@ -352,46 +357,189 @@ pre > code { border: 0; padding-right: 0; padding-left: 0; }
   </style>
 
 
-
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
   <script async src="https://cdn.ampproject.org/v0.js"></script>
+  
+  <style>
+  .flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  .flex-item {
+    min-width: 25%
+  }
+  #seannam {
+    text-align: center;
+    font-size: 4rem;
+  }
+  #degree {
+    text-align: center;
+    font-size: 2em;
+  }
+  #whoami {
+    text-align: center;
+    font-size: 1.5em; 
+  }
+  .btn-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .btn-container .btn{
+    margin: 1em;
+  }
+
+  .typing-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .typing-container p {
+    font-size: 3rem;
+    padding: 0.5rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    text-align: center;
+    overflow: hidden;
+  }
+  .typing-container p span.typed-text {
+    font-weight: normal;
+    color: #dd7732;
+  }
+  .typing-container p span.TypeCursor {
+    display: inline-block;
+    background-color: #ccc;
+    margin-left: 0.1rem;
+    width: 3px;
+    animation: blink 1s infinite;
+  }
+  .typing-container p span.TypeCursor.typing {
+    animation: none;
+  }
+  @keyframes blink {
+    0%  { background-color: #ccc; }
+    49% { background-color: #ccc; }
+    50% { background-color: transparent; }
+    99% { background-color: transparent; }
+    100%  { background-color: #ccc; }
+  }
+  @media (max-width:750px) {
+    .typing-container p {
+      font-size: 2rem;
+    }
+  }
+</style>
+<script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function() { 
+    const TypingText = document.querySelector(".typed-text");
+    const AutoTyping = document.querySelector(".TypeCursor");
+     
+    const textArray = ["Tech Enthusiast.", "Problem Solver.", "Entrepreneur."];
+    const typingDelay = 200;
+    const erasingDelay = 100;
+    const newTextDelay = 2000; 
+    let textArrayIndex = 0;
+    let charIndex = 0;
+     
+    function type() {
+      if (charIndex < textArray[textArrayIndex].length) {
+        if(!AutoTyping.classList.contains("typing")) AutoTyping.classList.add("typing");
+        TypingText.textContent += textArray[textArrayIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(type, typingDelay);
+      } 
+      else {
+        AutoTyping.classList.remove("typing");
+        setTimeout(erase, newTextDelay);
+      }
+    }
+     
+    function erase() {
+      if (charIndex > 0) {
+        if(!AutoTyping.classList.contains("typing")) AutoTyping.classList.add("typing");
+        TypingText.textContent = textArray[textArrayIndex].substring(0, charIndex-1);
+        charIndex--;
+        setTimeout(erase, erasingDelay);
+      } 
+      else {
+        AutoTyping.classList.remove("typing");
+        textArrayIndex++;
+        if(textArrayIndex>=textArray.length) textArrayIndex=0;
+        setTimeout(type, typingDelay + 1100);
+      }
+    }
+
+    if(textArray.length) setTimeout(type, newTextDelay + 250);
+    console.log(textArray.length)
+  });
+
+</script>
 </head>
 
   <body>
     <header class="site-header">
-  <a href="/" class="logo"><span class="logo"><amp-img src="/assets/images/logo.jpg" width="48" height="48" /></span></a>
-
-  <div class="page-links">
-    <a class="page-link" href="/">Home</a>
-    
-      
-      • <a class="page-link" href="/about/">About</a>
-      
-    
-      
-    
-      
-    
-      
-    
-      
-      • <a class="page-link" href="/now/">Now</a>
-      
-    
-      
-      • <a class="page-link" href="/projects/">Projects</a>
-      
-    
-      
-      • <a class="page-link" href="/resume/">Resume</a>
-      
-    
-      
-    
-  </div>
+  
+  <nav class="navbar navbar-expand-lg navbar-light ">
+	<a class="navbar-brand" href="/" class="logo">
+		<span class="logo">
+			<amp-img src="/assets/images/logo.jpg" width="30" height="30" />
+		</span>
+	</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+    	<span class="navbar-toggler-icon"></span>
+  	</button>
+	<div class="collapse navbar-collapse" id="navbarMenu">
+		<ul class="navbar-nav mr-auto">
+			 <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+			 <li class="nav-item"><a class="nav-link" href="/blog">Blog</a></li>
+		    
+		      
+		      	
+		      		<li class="nav-item"><a class="nav-link" href="/about/">About</a></li>
+		      		
+		      
+		    
+		      
+		    
+		      
+		      		
+		      
+		    
+		      
+		    
+		      
+		      	
+		      		<li class="nav-item"><a class="nav-link" href="/now/">Now</a></li>
+		      		
+		      
+		    
+		      
+		      	
+		      		<li class="nav-item"><a class="nav-link" href="/projects/">Projects</a></li>
+		      		
+		      
+		    
+		      
+		      	
+		      		<li class="nav-item"><a class="nav-link" href="/resume/">Resume</a></li>
+		      		
+		      
+		    
+		      
+		      		
+		      
+		    
+		</ul>
+	</div>
+  </nav>
 </header>
 
-    <!-- <script async>(function(s,u,m,o,j,v){j=u.createElement(m);v=u.getElementsByTagName(m)[0];j.async=1;j.src=o;j.dataset.sumoSiteId='fdac90006b98c600207b860012bcad001987ac004cd36900d0598f00b79b9000';v.parentNode.insertBefore(j,v)})(window,document,'script','//load.sumo.com/');</script> -->
+<!-- •  -->
 
     <main class="content" role="main">
   <article class="post">
@@ -421,31 +569,40 @@ pre > code { border: 0; padding-right: 0; padding-left: 0; }
   </article>
 </main>
 
-<footer class="site-footer">
+
+  </body>
+  <footer class="site-footer">
 <hr>
     <div class="inner">
          <section class="copyright">All content copyright Sean Nam</a> &copy; 2020 &bull; All rights reserved.</section>
     </div>
-</footer>
-<script type='text/javascript'>var _merchantSettings=_merchantSettings || [];_merchantSettings.push(['AT', '11lrxb']);(function(){var autolink=document.createElement('script');autolink.type='text/javascript';autolink.async=true; autolink.src= ('https:' == document.location.protocol) ? 'https://autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js' : 'http://autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(autolink, s);})();</script>
+    <!-- iTunes link generator -->
+	<script type='text/javascript'>var _merchantSettings=_merchantSettings || [];_merchantSettings.push(['AT', '11lrxb']);(function(){var autolink=document.createElement('script');autolink.type='text/javascript';autolink.async=true; autolink.src= ('https:' == document.location.protocol) ? 'https://autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js' : 'http://autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(autolink, s);})();</script>
+	<!-- / iTunes link generator -->
 
-
-
-    
-  </body>
 	<!-- Fathom - simple website analytics - https://usefathom.com -->
 	<script>
-		(function(f, a, t, h, o, m){
-			a[h]=a[h]||function(){
-			(a[h].q=a[h].q||[]).push(arguments)
-		};
-			o=f.createElement('script'),
-			m=f.getElementsByTagName('script')[0];
-			o.async=1; o.src=t; o.id='fathom-script';
-			m.parentNode.insertBefore(o,m)
-		})(document, window, 'https://cdn.usefathom.com/tracker.js', 'fathom');
-		fathom('set', 'siteId', 'LUXGEPES');
-		fathom('trackPageview');
+	    (function(f, a, t, h, o, m){
+	      a[h]=a[h]||function(){
+	       (a[h].q=a[h].q||[]).push(arguments)
+	    };
+	    o=f.createElement('script'),
+	    m=f.getElementsByTagName('script')[0];
+	    o.async=1; o.src=t; o.id='fathom-script';
+	    m.parentNode.insertBefore(o,m)
+	    })(document, window, '//cdn.usefathom.com/tracker.js', 'fathom');
+	    fathom('set', 'siteId', 'LUXGEPES');
+
+	    var fathomExcludeHostnames = [
+	    	'localhost',
+	    	'web.archive.org',
+	    	'127.0.0.1'
+	    ];
+
+	    if (fathomExcludeHostnames.indexOf(window.location.hostname) === -1) {
+	        fathom('trackPageview');
+	    }
 	</script>
 	<!-- / Fathom -->
+</footer>
 </html>
