@@ -5,8 +5,8 @@
     <description>UC San Diego B.S. Computer Science</description>
     <link>http://seannam.github.io/</link>
     <atom:link href="http://seannam.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 27 Feb 2020 16:36:37 +0000</pubDate>
-    <lastBuildDate>Thu, 27 Feb 2020 16:36:37 +0000</lastBuildDate>
+    <pubDate>Sat, 08 Aug 2020 02:16:19 +0000</pubDate>
+    <lastBuildDate>Sat, 08 Aug 2020 02:16:19 +0000</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
       <item>
@@ -284,8 +284,7 @@ Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;licen
 2) Created a &lt;code class=&quot;highlighter-rouge&quot;&gt;.travis.yml&lt;/code&gt;, which is what Travis uses for configuration. It’s fairly straightforward.&lt;/p&gt;
 
 &lt;noscript&gt;
-  &lt;pre&gt;400: Invalid request
-&lt;/pre&gt;
+  &lt;pre&gt;400: Invalid request&lt;/pre&gt;
 &lt;/noscript&gt;
 &lt;script src=&quot;https://gist.github.com/a2e0a2b4b9063139de3e3b43dd01dcaa.js?file=.travis.yml&quot;&gt; &lt;/script&gt;
 
@@ -299,22 +298,19 @@ safe: false
 
 &lt;p&gt;Full file:&lt;/p&gt;
 &lt;noscript&gt;
-  &lt;pre&gt;400: Invalid request
-&lt;/pre&gt;
+  &lt;pre&gt;400: Invalid request&lt;/pre&gt;
 &lt;/noscript&gt;
 &lt;script src=&quot;https://gist.github.com/2faa268b21fb7593980daa7881959a60.js?file=_config.yml&quot;&gt; &lt;/script&gt;
 
 &lt;p&gt;4) Created a script file that will run &lt;code class=&quot;highlighter-rouge&quot;&gt;htmlproofer&lt;/code&gt;, a Ruby Gem I’m using to test my site. It checks links and images.&lt;/p&gt;
 &lt;noscript&gt;
-  &lt;pre&gt;400: Invalid request
-&lt;/pre&gt;
+  &lt;pre&gt;400: Invalid request&lt;/pre&gt;
 &lt;/noscript&gt;
 &lt;script src=&quot;https://gist.github.com/2a7536032393af4960da59df44513be9.js?file=cibuild&quot;&gt; &lt;/script&gt;
 
 &lt;p&gt;5) Added &lt;code class=&quot;highlighter-rouge&quot;&gt;gem 'html-proofer'&lt;/code&gt; to my &lt;code class=&quot;highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt;.&lt;/p&gt;
 &lt;noscript&gt;
-  &lt;pre&gt;400: Invalid request
-&lt;/pre&gt;
+  &lt;pre&gt;400: Invalid request&lt;/pre&gt;
 &lt;/noscript&gt;
 &lt;script src=&quot;https://gist.github.com/2cda06384d19e3c6c341874f1970fd52.js?file=Gemfile&quot;&gt; &lt;/script&gt;
 
